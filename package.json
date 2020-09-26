@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build:css": "tailwind build src/main.css -o public/main.css"
+    "build:css": "tailwind build resources/main.css -o public/css/main.css"
   },
   "keywords": [],
   "author": "",
