@@ -1,0 +1,8 @@
+Possibilidade de inserção de novos jogos;
+Cálculo do mínimo e máximo da temporada;
+Cálculo da quantidade de vezes que o recorde foi quebrado;
+Interface para inserção dos dados;
+Interface para consulta dos dados;
+Testes unitários;
+Controle de versão Git;
+Documentação do código.

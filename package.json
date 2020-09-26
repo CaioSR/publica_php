@@ -1,0 +1,16 @@
+{
+  "name": "publica_php",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "tailwindcss": "^1.8.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build:css": "tailwind build src/main.css -o public/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
