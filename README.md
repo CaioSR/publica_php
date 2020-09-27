@@ -2,14 +2,14 @@
 
 ### Alternativamente você pode baixar esse projeto e no terminal:
 
-Instalar dependências :
-    npm install;
-    composer install.
+- Instalar dependências :
+    - npm install
+    - composer install.
 
-Buildar CSS :
-    npm run build:css.
+- Buildar CSS :
+    - npm run build:css.
 
-Importar o banco (arquivo publica_php.sql).
-Visualizar o arquivo config/db_config.php para redefinir nome da base, host, usuário e senha.
+- Importar o banco (arquivo publica_php.sql).
+- Visualizar o arquivo config/db_config.php para redefinir nome da base, host, usuário e senha.
 
-Então abrir o index.php na pasta Public para rodar.
+- Então abrir o index.php na pasta Public para rodar.
