@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `games` (
   `score` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `season_id` (`season_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Exportação de dados foi desmarcado.
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `seasons` (
   `maxScoreCounter` int unsigned DEFAULT '0',
   `minScoreCounter` int unsigned DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Exportação de dados foi desmarcado.
 
