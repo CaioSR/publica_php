@@ -1,8 +1,9 @@
 <?php
+namespace Main\Models\Game;
 
 class Game 
 {
-    private int $score;
+    private $score;
 
     public function __construct(int $score) 
     {

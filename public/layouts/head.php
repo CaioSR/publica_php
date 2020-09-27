@@ -1,5 +1,6 @@
 <?php
-require_once('../config/db_config.php');
+require_once(__DIR__.'/../../config/app.php');
+
 ?>
 
 <!DOCTYPE html>

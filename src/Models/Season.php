@@ -1,21 +1,19 @@
 <?php
-require_once('Game.php');
+namespace Main\Models;
+use Main\Models\Game;
 
-class Season 
-{
-    //private Array $games;
-    private int $maxScore;
-    private int $minScore;
-    private int $maxScoreCounter;
-    private int $minScoreCounter;
+class Season {
+    //private $games = [];
+    private $id;
+    private $name;
+    private $maxScore;
+    private $minScore;
+    private $maxScoreCounter;
+    private $minScoreCounter;
 
-    public function __contruct() 
+    public function __construct(String $name, int $maxScore = 0, int $minScore = 0, int $maxScoreCounter = 0, int $minScoreCounter = 0)
     {
-
-    }
-
-    public function __construct(int $maxScore, int $minScore, int $maxScoreCounter, int $minScoreCounter)
-    {
+        $this->name = $name;
         $this->maxScore = $maxScore;
         $this->minScore = $minScore;
         $this->maxScoreCounter = $maxScoreCounter;
@@ -24,7 +22,7 @@ class Season
 
     public function addGame(Game $game) 
     {
-        array_push($this->games, $game);
+        $this->games[] = $game;
     }
 
     public function verifyScore(int $score) 
@@ -42,6 +40,16 @@ class Season
     {
         $this->minScore = $score;
         $this->minScoreCounter++;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getName()
+    {
+        return $this->name;
     }
 
     public function getMaxScore()

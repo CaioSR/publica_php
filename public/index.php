@@ -1,11 +1,11 @@
 <?php
-include("layouts/head.php");
+require('layouts/head.php');
 ?>
 
 <a href="temporadas">Temporadas</a>
 <a href="jogos">Jogos</a>
 
 <?php
-include("layouts/bottom.php");
+require('layouts/bottom.php');
 ?>
 

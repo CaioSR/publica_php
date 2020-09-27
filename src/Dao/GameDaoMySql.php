@@ -1,5 +1,7 @@
 <?php
-require_once('../DaoInterfaces/GameDaoInterface.php');
+namespace Main\Dao;
+use Main\DaoInterfaces\GameDaoInterface;
+use Main\Models\Game;
 
 class GameDaoMySql implements GameDaoInterface 
 {
@@ -20,7 +22,7 @@ class GameDaoMySql implements GameDaoInterface
 
     }
 
-    public function findAll()
+    public function fetchAll()
     {
 
     }
