@@ -9,6 +9,7 @@
 - Buildar CSS :
     - npm run build:css.
 
+### E então:
 - Importar o banco (arquivo publica_php.sql).
 - Visualizar o arquivo config/db_config.php para redefinir nome da base, host, usuário e senha.
 
