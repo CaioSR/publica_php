@@ -13,12 +13,10 @@ class GameDaoMySql implements GameDaoInterface {
 
     public function store(Game $game)
     {
-
-    }
-
-    public function find(int $id)
-    {
-
+        $sql = $this->pdo->prepare('INSERT INTO games (season_id, score) VALUES (:season_id, :score)');
+        $sql->bindValue(':season_id', $game->getSeasonId());
+        $sql->bindValue(':score', $game->getScore());
+        $sql->execute();
     }
 
     public function fetchAll(int $season_id)

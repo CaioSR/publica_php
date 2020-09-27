@@ -24,23 +24,25 @@ class Season {
     public function addGame(Game $game) 
     {
         $this->games[] = $game;
+        $this->verifyScore($game->getScore());
     }
 
     public function verifyScore(int $score) 
     {
-        ($score > $this->maxScore) ? $this.updateMaxScore($score) : ($score > $this->minScore) ? $this.updateMinScore($score) : '';
+        ($score > $this->maxScore) ? $this->updateMaxScore($score) : ($score < $this->minScore) ? $this->updateMinScore($score) : '';
+        ($this->minScore == 0) ? $this->minScore = $score : '';
     }
 
     private function updateMaxScore(int $score) 
     {
+        ($this->maxScore > 0) ? $this->maxScoreCounter++ : '';
         $this->maxScore = $score;
-        $this->maxScoreCounter++;
     }
 
     private function updateMinScore(int $score) 
     {
+        ($this->minScore > 0) ? $this->minScoreCounter++ : '';
         $this->minScore = $score;
-        $this->minScoreCounter++;
     }
 
     public function getId()
@@ -65,7 +67,7 @@ class Season {
 
     public function getMaxScoreCounter()
     {
-        return $this->maxScore;
+        return $this->maxScoreCounter;
     }
 
     public function getMinScoreCounter()

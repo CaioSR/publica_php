@@ -14,7 +14,7 @@ $games = $gameDao->fetchAll($id);
 ?>
 
 <h1><?= $season->getName(); ?></h1>
-
+<a href="../jogos/create.php?name=<?=$season->getName()?>">Adicionar Novo Jogo</a>
 <table>
     <thead>
         <tr>
