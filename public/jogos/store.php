@@ -9,14 +9,13 @@ $seasonDao = new SeasonDaoMySql($pdo);
 $gameDao = new GameDaoMySql($pdo);
 
 $score = filter_input(INPUT_POST, 'score');
-$season_name = filter_input(INPUT_POST, 'season');
+$season_id = filter_input(INPUT_POST, 'season');
 
 if ($score) {
-    $season = $seasonDao->findByName($season_name);
+    $season = $seasonDao->find($season_id);
 
     if ($season) {
         $game = new Game($season->getId(), $score);
-        $game->getSeasonId();
         $season->addGame($game);
         
         $gameDao->store($game);
@@ -24,5 +23,5 @@ if ($score) {
     }
 }
 
-header ('Location: index.php?name='.$season_name);
+header ('Location: index.php?id='.$season->getId());
 exit;

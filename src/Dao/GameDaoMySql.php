@@ -21,7 +21,18 @@ class GameDaoMySql implements GameDaoInterface {
 
     public function find(int $id)
     {
+        $sql = $this->pdo->prepare('SELECT * FROM games WHERE id = :id');
+        $sql->bindValue(':id', $id);
+        $sql->execute();
 
+        if ($sql->rowCount() > 0){
+            $data = $sql->fetch();
+
+            $game = new Game($data['season_id'], $data['score'], $data['id']);
+            return $game;
+        }
+
+        return false;
     }
 
     public function fetchAll(int $season_id)
@@ -46,15 +57,5 @@ class GameDaoMySql implements GameDaoInterface {
         }
 
         return $games;
-    }
-
-    public function update(Game $game)
-    {
-
-    }
-
-    public function delete(int $id)
-    {
-
     }
 }

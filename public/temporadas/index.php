@@ -26,13 +26,12 @@ $seasons = $seasonDao->fetchAll();
     <tbody>
         <?php foreach ($seasons as $season): ?>
         <tr>
-            <td><a href="../jogos/index.php?name=<?=$season->getName()?>"><?=$season->getName()?></a></td>
+            <td><a href="../jogos/index.php?id=<?=$season->getId()?>"><?=$season->getName()?></a></td>
             <td><?=$season->getMaxScore()?></td>
             <td><?=$season->getMinScore()?></td>
             <td><?=$season->getMaxScoreCounter()?></td>
             <td><?=$season->getMinScoreCounter()?></td>
-            <td class="text-center">Editar</td>
-            <td class="text-center">Deletar</td>
+            <td class="text-center"><a href="delete.php?id=<?=$season->getId()?>" onclick="return confirm('Are you sure?')">Deletar</a></td>
         </tr>
         <?php endforeach ?>
     </tbody>

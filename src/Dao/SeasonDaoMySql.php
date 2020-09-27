@@ -1,6 +1,7 @@
 <?php
 namespace Main\Dao;
 use Main\DaoInterfaces\SeasonDaoInterface;
+use Main\Dao\GameDaoMySql;
 use Main\Models\Season;
 
 class SeasonDaoMySql implements SeasonDaoInterface {
@@ -40,7 +41,7 @@ class SeasonDaoMySql implements SeasonDaoInterface {
         $sql->bindValue(':id', $id);
         $sql->execute();
 
-        if ($sql->rowCount() > 0){
+        if ($sql->rowCount() > 0) {
             $data = $sql->fetch();
 
             $season = new Season($data['name'], $data['maxScore'], $data['minScore'], $data['maxScoreCounter'], $data['minScoreCounter'], $data['id']);
@@ -96,6 +97,12 @@ class SeasonDaoMySql implements SeasonDaoInterface {
 
     public function delete(int $id)
     {
+        $sql = $this->pdo->prepare('DELETE FROM seasons WHERE id = :id');
+        $sql->bindValue(':id', $id);
+        $sql->execute();
 
+        $sql = $this->pdo->prepare('DELETE FROM games WHERE season_id = :id');
+        $sql->bindValue(':id', $id);
+        $sql->execute();
     }
 }

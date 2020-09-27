@@ -3,7 +3,6 @@ namespace Main\Models;
 use Main\Models\Game;
 
 class Season {
-    //private $games = [];
     private $id;
     private $name;
     private $maxScore;
@@ -23,7 +22,6 @@ class Season {
 
     public function addGame(Game $game) 
     {
-        $this->games[] = $game;
         $this->verifyScore($game->getScore());
     }
 
