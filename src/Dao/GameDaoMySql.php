@@ -3,14 +3,24 @@ namespace Main\Dao;
 use Main\DaoInterfaces\GameDaoInterface;
 use Main\Models\Game;
 
+/*
+* Implementação da Interface GameDao para bancos MySql
+*/
+
 class GameDaoMySql implements GameDaoInterface {
     private $pdo;
 
+    /*
+    * Recebe uma conexão de banco
+    */
     public function __construct($driver)
     {
         $this->pdo = $driver;
     }
 
+    /*
+    * Armazena jogo no banco
+    */
     public function store(Game $game)
     {
         $sql = $this->pdo->prepare('INSERT INTO games (season_id, score) VALUES (:season_id, :score)');
@@ -19,6 +29,9 @@ class GameDaoMySql implements GameDaoInterface {
         $sql->execute();
     }
 
+    /*
+    * Busca e retorna um jogo no banco com base no id
+    */
     public function find(int $id)
     {
         $sql = $this->pdo->prepare('SELECT * FROM games WHERE id = :id');
@@ -31,10 +44,11 @@ class GameDaoMySql implements GameDaoInterface {
             $game = new Game($data['season_id'], $data['score'], $data['id']);
             return $game;
         }
-
-        return false;
     }
 
+    /*
+    * Busca e retorna uma lista de jogos no banco com base no id da temporada
+    */
     public function fetchAll(int $season_id)
     {
         $games = [];

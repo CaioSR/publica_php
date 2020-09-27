@@ -1,6 +1,10 @@
 <?php
 namespace Main\Models;
 
+/*
+* Modelo de jogo para armazenamento e retirada do banco
+*/
+
 class Game {
     private $id;
     private $season_id;

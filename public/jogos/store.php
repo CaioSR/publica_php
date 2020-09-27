@@ -5,6 +5,11 @@ use Main\Dao\SeasonDaoMySql;
 use Main\Dao\GameDaoMySql;
 use Main\Models\Game;
 
+/*
+* Script para chamar receber formulário e enviar dados para o método de inserção
+* Ele atualiza os scores na temporada e adiciona o jogo no banco
+*/
+
 $seasonDao = new SeasonDaoMySql($pdo);
 $gameDao = new GameDaoMySql($pdo);
 

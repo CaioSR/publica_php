@@ -4,8 +4,15 @@ use PHPUnit\Framework\TestCase;
 use Main\Models\Season;
 use Main\Models\Game;
 
+/*
+* Testes para avaliar a atualização de pontuação da temporada
+*/
+
 class SeasonTest extends TestCase {
 
+    /*
+    * Verifica se a pontuação máxima e mínima estão atualizando corretamente
+    */
     public function testScoreUpdate()
     {
         $season = new Season('Verão 2020', 0, 0, 0, 0, 1);
@@ -31,6 +38,9 @@ class SeasonTest extends TestCase {
         $this->assertEquals(5, $season->getMinScore());
     }
 
+    /*
+    * Verifica se a quantidade de quebra de recorde estão funcionando corretamente
+    */
     public function testScoreUpdateCounter()
     {
         $season = new Season('Verão 2020', 0, 0, 0, 0, 1);

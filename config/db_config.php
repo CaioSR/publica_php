@@ -1,5 +1,10 @@
 <?php
 
+/*
+* Realiza a conexão com o banco de dados
+* Redefinir variáveis conforme necessidade
+*/
+
 $db_name = "publica_db";
 $db_host = "localhost";
 $db_user = "root";

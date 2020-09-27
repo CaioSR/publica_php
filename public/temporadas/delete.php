@@ -3,6 +3,9 @@ require('../../config/app.php');
 
 use Main\Dao\SeasonDaoMySql;
 
+/*
+* Script para chamar método de deleção
+*/
 
 $seasonDao = new SeasonDaoMySql($pdo);
 $id = filter_input(INPUT_GET, 'id');

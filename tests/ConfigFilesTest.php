@@ -2,6 +2,10 @@
 
 use PHPUnit\Framework\TestCase;
 
+/*
+* Esses testes verificam se os arquivos de configuração estão no local correto
+*/
+
 class ConfigFilesTest extends TestCase {
     
     public function testRequireApp()

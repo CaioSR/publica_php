@@ -4,14 +4,24 @@ use Main\DaoInterfaces\SeasonDaoInterface;
 use Main\Dao\GameDaoMySql;
 use Main\Models\Season;
 
+/*
+* Implementação da interface SeasonDao para bancos MySql
+*/
+
 class SeasonDaoMySql implements SeasonDaoInterface {
     private $pdo;
 
+    /*
+    * Recebe uma conexão de banco
+    */
     public function __construct($driver)
     {
         $this->pdo = $driver;
     }
 
+    /*
+    * Armazena temporada no banco
+    */
     public function store(Season $season)
     {
         $sql = $this->pdo->prepare('INSERT INTO seasons (name) VALUES (:name)');
@@ -19,6 +29,9 @@ class SeasonDaoMySql implements SeasonDaoInterface {
         $sql->execute();
     }
 
+    /*
+    * Busca e retorna uma temporada do banco com base no nome
+    */
     public function findByName(String $name)
     {
         $sql = $this->pdo->prepare('SELECT * FROM seasons WHERE name = :name');
@@ -30,11 +43,12 @@ class SeasonDaoMySql implements SeasonDaoInterface {
 
             $season = new Season($data['name'], $data['maxScore'], $data['minScore'], $data['maxScoreCounter'], $data['minScoreCounter'], $data['id']);
             return $season;
-        }else{
-            return false;
         }
     }
     
+    /*
+    * Busca e retorna uma temporada do banco com base no id
+    */
     public function find(int $id)
     {
         $sql = $this->pdo->prepare('SELECT * FROM seasons WHERE id = :id');
@@ -48,9 +62,11 @@ class SeasonDaoMySql implements SeasonDaoInterface {
             return $season;
         }
 
-        return false;
     }
 
+    /*
+    * Retorna todas as temporadas do banco
+    */
     public function fetchAll()
     {
         $seasons = [];
@@ -75,6 +91,9 @@ class SeasonDaoMySql implements SeasonDaoInterface {
         return $seasons;
     }
 
+    /*
+    * Atualiza uma temporada no banco
+    */
     public function update(Season $season)
     {
         $sql = $this->pdo->prepare(
@@ -95,6 +114,9 @@ class SeasonDaoMySql implements SeasonDaoInterface {
         $sql->execute();
     }
 
+    /*
+    * Deleta uma temporada do banco
+    */
     public function delete(int $id)
     {
         $sql = $this->pdo->prepare('DELETE FROM seasons WHERE id = :id');

@@ -2,6 +2,10 @@
 namespace Main\DaoInterfaces;
 use Main\Models\Season;
 
+/*
+* Interface do SeasonDao
+*/
+
 Interface SeasonDaoInterface 
 {
     public function store(Season $season);

@@ -10,6 +10,7 @@ require_once(__DIR__.'/../../config/app.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Score Manager</title>
 
+    <!-- Import Styles -->
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
