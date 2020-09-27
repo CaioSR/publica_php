@@ -3,11 +3,11 @@
 ### Alternativamente você pode baixar esse projeto e no terminal:
 
 Instalar dependências :
-    npm install
-    composer install
+    npm install;
+    composer install.
 
 Buildar CSS :
-    npm run build:css
+    npm run build:css.
 
 Importar o banco (arquivo publica_php.sql).
 Visualizar o arquivo config/db_config.php para redefinir nome da base, host, usuário e senha.
