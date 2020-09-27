@@ -14,11 +14,11 @@ $seasons = $seasonDao->fetchAll();
 <table class="table">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Max Score</th>
-            <th>Min Score</th>
-            <th>Max Score Counter</th>
-            <th>Min Score Counter</th>
+            <th>Nome</th>
+            <th>Máximo da Temporada</th>
+            <th>Mínimo da Temporada</th>
+            <th>Quebra recorde máximo</th>
+            <th>Quebra recorde mínimo</th>
             <th></th>
             <th></th>
         </tr>
@@ -26,12 +26,13 @@ $seasons = $seasonDao->fetchAll();
     <tbody>
         <?php foreach ($seasons as $season): ?>
         <tr>
-            <td><a href="../jogos/index.php?id=<?=$season->getId()?>"><?=$season->getName()?></a></td>
+            <td><?=$season->getName()?></td>
             <td><?=$season->getMaxScore()?></td>
             <td><?=$season->getMinScore()?></td>
             <td><?=$season->getMaxScoreCounter()?></td>
             <td><?=$season->getMinScoreCounter()?></td>
-            <td class="text-center"><a href="delete.php?id=<?=$season->getId()?>" onclick="return confirm('Are you sure?')">Deletar</a></td>
+            <td class="text-center"><a href="../jogos/index.php?id=<?=$season->getId()?>">Ver Jogos</a></td>
+            <td class="text-center"><a href="delete.php?id=<?=$season->getId()?>" onclick="return confirm('Tem certeza?')">Deletar</a></td>
         </tr>
         <?php endforeach ?>
     </tbody>

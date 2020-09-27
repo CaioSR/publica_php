@@ -24,13 +24,17 @@ $games = $gameDao->fetchAll($id);
 <table class="table mt-5">
     <thead>
         <tr>
-            <th>Score</th>
+            <th>Jogo</th>
+            <th>Pontuação</th>
         </tr>
     </thead>
     <tbody>
+        <?php $game_count = 0; ?>
         <?php foreach ($games as $game): ?>
+        <?php $game_count++; ?>
         <tr>
-            <td><?= $game->getScore() ?></td>
+            <td><?=$game_count?></td>
+            <td><?=$game->getScore()?></td>
         </tr>
         <?php endforeach ?>
     </tbody>

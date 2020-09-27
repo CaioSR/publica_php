@@ -14,7 +14,7 @@ $season_id = filter_input(INPUT_POST, 'season');
 if ($score) {
     $season = $seasonDao->find($season_id);
 
-    if ($season) {
+    if ($season && $score < 1000 && $score > 0) {
         $game = new Game($season->getId(), $score);
         $season->addGame($game);
         
