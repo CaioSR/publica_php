@@ -27,7 +27,7 @@ class Season {
 
     public function verifyScore(int $score) 
     {
-        ($score > $this->maxScore) ? $this->updateMaxScore($score) : ($score < $this->minScore) ? $this->updateMinScore($score) : '';
+        (($score > $this->maxScore) ? $this->updateMaxScore($score) : ($score < $this->minScore)) ? $this->updateMinScore($score) : '';
         ($this->minScore == 0) ? $this->minScore = $score : '';
     }
 
