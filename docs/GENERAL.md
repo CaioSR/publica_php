@@ -1,7 +1,7 @@
 autor: Caio Shimada Rabello
 data: Setembro de 2020
 
-Descrição de Diretórios
+# Descrição de Diretórios
 
 config : arquivos para configuração de caminhos, autoloader de classes e conexão com o banco de dados
 docs : documentação geral
@@ -17,7 +17,7 @@ src {
 tests : Alguns testes unitários realizados.
 
 
-Observações
+# Observações
 A parte visual funciona corretamente entretanto a implementação do back-end não está 100%.
 Durante a implementação houveram dificuldades em separar a definição das classes com o que seria armazenado no banco.
 Por exemplo, a classe Temporada teoricamente possui uma lista de jogos. Porém no banco não, a referência é do Jogo a Temporada.
