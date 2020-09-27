@@ -19,6 +19,11 @@ class GameDaoMySql implements GameDaoInterface {
         $sql->execute();
     }
 
+    public function find(int $id)
+    {
+
+    }
+
     public function fetchAll(int $season_id)
     {
         $games = [];

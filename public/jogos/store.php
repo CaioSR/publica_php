@@ -24,5 +24,5 @@ if ($score) {
     }
 }
 
-header ('Location: index.php');
+header ('Location: index.php?name='.$season_name);
 exit;
