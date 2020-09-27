@@ -6,7 +6,7 @@ Interface GameDaoInterface
 {
     public function store(Game $game);
     public function find(int $id);
-    public function fetchAll();
+    public function fetchAll(int $season_id);
     public function update(Game $game);
     public function delete(int $id);
 }

@@ -11,8 +11,9 @@ class Season {
     private $maxScoreCounter;
     private $minScoreCounter;
 
-    public function __construct(String $name, int $maxScore = 0, int $minScore = 0, int $maxScoreCounter = 0, int $minScoreCounter = 0)
+    public function __construct(String $name, int $maxScore = 0, int $minScore = 0, int $maxScoreCounter = 0, int $minScoreCounter = 0, int $id = null)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->maxScore = $maxScore;
         $this->minScore = $minScore;

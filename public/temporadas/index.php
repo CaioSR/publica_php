@@ -19,16 +19,18 @@ $seasons = $seasonDao->fetchAll();
             <th>Min Score</th>
             <th>Max Score Counter</th>
             <th>Min Score Counter</th>
+            <th>Editar</th>
+            <th>Deletar</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach ($seasons as $season): ?>
         <tr>
-            <td><?=$season->getName();?></td>
-            <td><?=$season->getMaxScore();?></td>
-            <td><?=$season->getMinScore();?></td>
-            <td><?=$season->getMaxScoreCounter();?></td>
-            <td><?=$season->getMinScoreCounter();?></td>
+            <td><a href="show.php?id=<?=$season->getId()?>"><?=$season->getName()?></a></td>
+            <td><?=$season->getMaxScore()?></td>
+            <td><?=$season->getMinScore()?></td>
+            <td><?=$season->getMaxScoreCounter()?></td>
+            <td><?=$season->getMinScoreCounter()?></td>
         </tr>
         <?php endforeach ?>
     </tbody>

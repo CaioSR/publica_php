@@ -11,6 +11,13 @@ class SeasonDaoMySql implements SeasonDaoInterface {
         $this->pdo = $driver;
     }
 
+    public function store(Season $season)
+    {
+        $sql = $this->pdo->prepare('INSERT INTO seasons (name) VALUES (:name)');
+        $sql->bindValue(':name', $season->getName());
+        $sql->execute();
+    }
+
     public function doesExists(String $name)
     {
         $sql = $this->pdo->prepare('SELECT * FROM seasons WHERE name = :name');
@@ -23,17 +30,21 @@ class SeasonDaoMySql implements SeasonDaoInterface {
             return false;
         }
     }
-
-    public function store(Season $season)
-    {
-        $sql = $this->pdo->prepare("INSERT INTO seasons (name) VALUES (:name)");
-        $sql->bindValue(':name', $season->getName());
-        $sql->execute();
-    }
     
     public function find(int $id)
     {
+        $sql = $this->pdo->prepare('SELECT * FROM seasons WHERE id = :id');
+        $sql->bindValue(':id', $id);
+        $sql->execute();
 
+        if ($sql->rowCount() > 0){
+            $data = $sql->fetch();
+
+            $season = new Season($data['name'], $data['maxScore'], $data['minScore'], $data['maxScoreCounter'], $data['minScoreCounter'], $data['id']);
+            return $season;
+        }
+
+        return false;
     }
 
     public function fetchAll()
@@ -50,7 +61,8 @@ class SeasonDaoMySql implements SeasonDaoInterface {
                     $item['maxScore'],
                     $item['minScore'],
                     $item['maxScoreCounter'],
-                    $item['minScoreCounter']
+                    $item['minScoreCounter'],
+                    $item['id']
                 );
                 $seasons[] = $season;
             }   
