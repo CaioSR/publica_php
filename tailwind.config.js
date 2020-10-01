@@ -1,6 +1,8 @@
 // tailwind.config.js
 module.exports = {
-    purge: [],
+    purge: [
+      './public/**/*.php'
+    ],
     theme: {
       container: {
         center: true,
